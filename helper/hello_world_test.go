@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestHelloWorld(t *testing.T) {
@@ -49,7 +50,15 @@ func TestHelloWorld4(t *testing.T) {
 func TestHelloWorldAssertion(t *testing.T) {
 	result := HelloWorld("Alexander")
 
-	assert.Equal(t, "Hello Alexander", result, "Result must be Hello Alexander")
+	assert.Equal(t, "Hello Alexander", result, "Result must be Hello Alexander") // Fail() if error
 
 	fmt.Println("TestHelloWorldAssertion done")
+}
+
+func TestHelloWorldRequire(t *testing.T) {
+	result := HelloWorld("Bambang")
+	
+	require.Equal(t, "Hello Bambang", result, "Result must be Hello Bambang") // FailNow() if error
+
+	fmt.Println("TestHelloWorldRequire done")
 }
