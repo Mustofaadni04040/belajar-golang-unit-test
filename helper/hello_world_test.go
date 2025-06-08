@@ -9,6 +9,14 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func TestMain(m *testing.M) {
+	// before
+	fmt.Println("before unit test")
+	m.Run()
+	// after
+	fmt.Println("after unit test")
+}
+
 func TestHelloWorld(t *testing.T) {
 	result := HelloWorld("Mustofa Adny")
 
