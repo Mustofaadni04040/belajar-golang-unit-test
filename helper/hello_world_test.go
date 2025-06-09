@@ -125,3 +125,9 @@ func TestHelloWorldWithTable(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ { // atau shortcut: b.loop
+		HelloWorld("Mustofa Adny")
+	}
+}
