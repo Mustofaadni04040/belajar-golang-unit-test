@@ -121,7 +121,7 @@ func TestHelloWorldWithTable(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			result := HelloWorld(test.request)
-			assert.Equal(t, test.expected, result, "Result must be "+test.expected)
+			assert.Equal(t, test.expected, result, "Result must be " + test.expected)
 		})
 	}
 }
