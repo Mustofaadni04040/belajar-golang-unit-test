@@ -131,3 +131,17 @@ func BenchmarkHelloWorld(b *testing.B) {
 		HelloWorld("Mustofa Adny")
 	}
 }
+
+func BenchmarkSub(b *testing.B) {
+	b.Run("Benchmark1", func (b *testing.B)  {
+			for i := 0; i < b.N; i++ { // atau shortcut: b.loop
+			HelloWorld("Mustofa Adny")
+		}
+	})
+
+	b.Run("Benchmark2", func (b *testing.B)  {
+			for i := 0; i < b.N; i++ { // atau shortcut: b.loop
+			HelloWorld("Ucok Udin")
+		}
+	})
+}
